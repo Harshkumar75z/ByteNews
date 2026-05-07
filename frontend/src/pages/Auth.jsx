@@ -134,12 +134,6 @@ function Auth() {
             {isLogin ? "Register" : "Login"}
           </button>
         </p>
-
-        <div className="text-center mt-5">
-          <Link to="/" className="text-gray-400 hover:text-white transition">
-            Back to Home
-          </Link>
-        </div>
       </div>
     </div>
   );
