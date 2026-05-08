@@ -13,9 +13,7 @@ function Home() {
     const fetchStory = async () => {
         try {
             setLoading(true);
-            const res = await axios.get(
-                "http://localhost:8000/api/stories"
-            );
+            const res = await api.get("/stories");
             setStories(res.data.stories);
 
         } catch (error) {

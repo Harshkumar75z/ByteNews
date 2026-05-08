@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogout = async () => {
     console.log("clicked");
     try {
-      await axios.get("http://localhost:8000/api/auth/logout");
+      await axios.get("/auth/logout");
       // Remove token from localStorage
       localStorage.removeItem("token");
       dispatch(logout());

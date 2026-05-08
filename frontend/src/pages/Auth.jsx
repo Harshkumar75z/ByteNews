@@ -32,10 +32,12 @@ function Auth() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/api/auth/login", {
+      const res = await api.post("/auth/login",
+      {
         email: formData.email,
         password: formData.password,
-      });
+      }
+    );
       localStorage.setItem("token", res.data.token);
       dispatch(login(res.data.user));
       toast.success("Login Successful");
@@ -49,10 +51,7 @@ function Auth() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8000/api/auth/register",
-        formData,
-      );
+      const res = await api.post("/auth/register",formData);
       // Auto switch to login
       dispatch(login(res.data.user));
       toast.success("Account Created Successfully");
